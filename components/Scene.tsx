@@ -4,11 +4,15 @@ import { Canvas, useThree } from "@react-three/fiber"
 import Model from "./Model"
 import { Suspense } from "react"
 import { useProgress, Html, ScrollControls } from "@react-three/drei"
+import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 function Loader() {
   const { progress, active } = useProgress()
-
-  return <Html center>{progress.toFixed(1)} % loaded</Html>
+//{progress.toFixed(1)} % loaded
+  return <Html center>          <TextGenerateEffect
+            words="Please Wait"
+            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+          /></Html>
 }
 
 export default function Scene() {
