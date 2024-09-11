@@ -3,7 +3,7 @@
 import { Canvas, useThree } from "@react-three/fiber"
 import Model from "./Model"
 import { Suspense } from "react"
-import { useProgress, Html, ScrollControls } from "@react-three/drei"
+import { useProgress, Html, ScrollControls, OrbitControls } from "@react-three/drei"
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 function Loader() {
@@ -17,12 +17,14 @@ function Loader() {
 
 export default function Scene() {
   return (
-    <Canvas gl={{ antialias: true }} dpr={[1, 1.5]}  className="z-10  pt-36">  
+    <Canvas gl={{ antialias: true }} dpr={[1, 1.5]}  className="z-10  pt-36"> 
+     <OrbitControls enableZoom enablePan enableRotate />  
       <directionalLight position={[-5, -5, 5]} intensity={4} />
       <Suspense fallback={<Loader />}>
+       
         {/* <ScrollControls damping={0.5} pages={2}> */}
           <Model />
-
+{/* </OrbitControls > */}
         {/* </ScrollControls> */}
       </Suspense>
     </Canvas>
