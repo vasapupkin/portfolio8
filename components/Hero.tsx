@@ -83,7 +83,7 @@ const Hero = () => {
 
 
       <div className="flex justify-center relative     z-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
+        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[80vw] flex flex-col items-center justify-center">
           {/* <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
             Dynamic Web Magic with Next.js
           </p> */}
@@ -93,13 +93,13 @@ const Hero = () => {
            *
            *  change md:text-6xl, add more responsive code
            */}
-          {/* <TextGenerateEffect
-            words="Transforming Concepts into Seamless User Experiences"
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
-          /> */}
-     <TypewriterEffectSmooth
-           words={words}
+          <TextGenerateEffect
+            words="Liebe Besucher dieser Webseite, ich heiße Gelo und bin euer persönlicher 3D-Assistent. D.h. Sie können mich vergrössern oder auch in unterschiedliche Richtungen drehen. Auf dieser Seite können Sie die Information über Oleg sehen. Seinen Bildungsweg, seine Projekte, seine Referenzen und auch die Schwerpunkte seiner Tätigkeit. Am Ende können Sie mich fragen, ob Oleg für Ihren Job genau der richtige ist. Wollen Sie mich bzw. die komplette Webseite in andere Sprache haben, kein Problem, sagen Sie mir welche."
+            className="text-justify text-[15px] md:text-xl lg:text-2xl"
           />
+     {/* <TypewriterEffectSmooth
+           words={words}
+          /> */}
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
             Hi! I&apos;m Adrian, a Next.js Developer based in Croatia.
           </p>
