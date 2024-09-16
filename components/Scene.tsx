@@ -10,15 +10,15 @@ function Loader() {
   const { progress, active } = useProgress()
 //{progress.toFixed(1)} % loaded
   return <Html center>          <TextGenerateEffect
-            words="Please Wait"
+            words="Bitte warten"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           /></Html>
 }
 
 export default function Scene() {
   return (
-    <Canvas gl={{ antialias: true }} dpr={[1, 1.5]}  className="z-10  pt-36"> 
-     <OrbitControls enableZoom enablePan enableRotate />  
+    <Canvas gl={{ antialias: true }} dpr={[1, 1.5]} camera={{ position: [0, 4, 4],  zoom:2.2}} className="z-10  pt-36"> 
+     <OrbitControls enableZoom enablePan enableRotate />  0
       <directionalLight position={[-5, -5, 5]} intensity={4} />
       <Suspense fallback={<Loader />}>
        

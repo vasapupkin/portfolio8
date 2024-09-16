@@ -16,7 +16,7 @@ const Scene = dynamic(() => import("@/components/Scene"), { ssr: false })
 const Home = () => {
   return (
     <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-            <div className="items-center"  style={{height:'70vh', width:'70vh'}} > 
+            <div className="items-center"  style={{height:'60vh', width:'100vh'}} > 
            <Scene/>
            </div>
       <div className="max-w-7xl w-full"> 
