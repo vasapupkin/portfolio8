@@ -28,26 +28,7 @@ const Home = () => {
   return (
     <LanguageContext.Provider value={{ language, setLanguage: changeLanguage }}>
       <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-        <div className="absolute top-10 right-4 flex lg:flex-row md:flex-row flex-col space-y-2 lg:space-y-0 md:space-y-0 lg:space-x-2 md:space-x-2 z-50">
-          <button 
-            className="relative inline-flex h-8 w-8 overflow-hidden rounded-full p-[1px] focus:outline-none"
-            onClick={() => changeLanguage('de')}
-          >
-            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 backdrop-blur-3xl">
-              <Image src="/german-flag.png" alt="German Flag" width={24} height={24} />
-            </span>
-          </button>
-          <button 
-            className="relative inline-flex h-8 w-8 overflow-hidden rounded-full p-[1px] focus:outline-none"
-            onClick={() => changeLanguage('en')}
-          >
-            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 backdrop-blur-3xl">
-              <Image src="/usa-flag.png" alt="USA Flag" width={24} height={24} />
-            </span>
-          </button>
-        </div>
+        {/* Remove the language selection buttons from here */}
         <div className="items-center" style={{height:'60vh', width:'100vh'}}> 
           <Scene/>
         </div>

@@ -8,6 +8,8 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { LanguageContext } from "@/contexts/LanguageContext";
 
 export const FloatingNav = ({
   navItems,
@@ -24,6 +26,7 @@ export const FloatingNav = ({
 
   // set true for the initial state so that nav bar is visible in the hero section
   const [visible, setVisible] = useState(true);
+  const { language, setLanguage } = React.useContext(LanguageContext);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
@@ -85,11 +88,26 @@ export const FloatingNav = ({
             <span className=" text-sm !cursor-pointer">{navItem.name}</span>
           </Link>
         ))}
-        {/* remove this login btn */}
-        {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button> */}
+        <div className="flex space-x-2 ml-2">
+          <button 
+            className="relative inline-flex h-6 w-6 overflow-hidden rounded-full p-[1px] focus:outline-none"
+            onClick={() => setLanguage('de')}
+          >
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 backdrop-blur-3xl">
+              <Image src="/german-flag.png" alt="German Flag" width={16} height={16} />
+            </span>
+          </button>
+          <button 
+            className="relative inline-flex h-6 w-6 overflow-hidden rounded-full p-[1px] focus:outline-none"
+            onClick={() => setLanguage('en')}
+          >
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 backdrop-blur-3xl">
+              <Image src="/usa-flag.png" alt="USA Flag" width={16} height={16} />
+            </span>
+          </button>
+        </div>
       </motion.div>
     </AnimatePresence>
   );
