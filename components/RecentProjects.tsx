@@ -1,11 +1,39 @@
 "use client";
 
+import { useState } from "react";
 import { FaLocationArrow } from "react-icons/fa6";
 
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
+import MagicButton from "./MagicButton";
+import ProjectModal from "./ProjectModal";
+
+// Define the Project type
+type Project = {
+  id: number;
+  title: string;
+  des: string;
+  img: string;
+  iconLists: string[];
+  link: string;
+};
 
 const RecentProjects = () => {
+  const [visibleProjects, setVisibleProjects] = useState(4);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const showMoreProjects = () => {
+    setVisibleProjects((prev) => Math.min(prev + 4, projects.length));
+  };
+
+  const openModal = (project: Project) => {
+    setSelectedProject(project);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+  };
+
   return (
     <div className="py-20">
       <h1 className="heading">
@@ -13,14 +41,15 @@ const RecentProjects = () => {
         <span className="text-purple">recent projects</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
-        {projects.map((item) => (
+        {projects.slice(0, visibleProjects).map((item: Project) => (
           <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw] cursor-pointer"
             key={item.id}
+            onClick={() => openModal(item)}
           >
             <PinContainer
               title="/ui.aceternity.com"
-              href="https://twitter.com/mannupaaji"
+              href="#"
             >
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                 <div
@@ -76,6 +105,21 @@ const RecentProjects = () => {
           </div>
         ))}
       </div>
+      
+      {visibleProjects < projects.length && (
+        <div className="flex justify-center mt-10">
+          <MagicButton
+            title="Show more"
+            icon={<FaLocationArrow />}
+            position="right"
+            handleClick={showMoreProjects}
+          />
+        </div>
+      )}
+
+      {selectedProject && (
+        <ProjectModal project={selectedProject} onClose={closeModal} />
+      )}
     </div>
   );
 };
