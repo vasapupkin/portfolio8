@@ -8,6 +8,7 @@ interface ProjectModalProps {
     img: string;
     iconLists: string[];
     link: string;
+    stack: string;
   };
   onClose: () => void;
 }
@@ -26,9 +27,13 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
           <img src="/bg.png" alt="bgimg" className="absolute inset-0 w-full h-full object-cover" />
           <img src={project.img} alt="cover" className="absolute bottom-0 left-1/2 transform -translate-x-1/2" />
         </div>
+        <p className="text-[#BEC1DD] mb-1 ">Projektbeschreibung:</p>
         <p className="text-[#BEC1DD] mb-4">{project.des}</p>
+        <p className="text-[#BEC1DD] mb-1 ">Stack:</p>
         <div className="flex items-center justify-between">
-          <div className="flex items-center">
+        
+        <p className="text-[#BEC1DD] mb-4 text-sm">{project.stack}</p>
+          {/* <div className="flex items-center">
             {project.iconLists.map((icon, index) => (
               <div
                 key={index}
@@ -40,12 +45,15 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                 <img src={icon} alt={`icon${index + 1}`} className="p-2" />
               </div>
             ))}
-          </div>
-          <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center text-purple hover:underline">
-            Check Live Site
-            <FaLocationArrow className="ml-2" />
-          </a>
+          </div> */}
+
         </div>
+        {project.link !== '' && (
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center text-purple hover:underline">
+              Check Live Site
+              <FaLocationArrow className="ml-2" />
+            </a>
+          )}
       </div>
     </div>
   );

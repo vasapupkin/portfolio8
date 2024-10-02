@@ -5,7 +5,7 @@ export const heroText = {
     buttonText: "Show my work"
   },
   de: {
-    mainDescription: "Liebe Besucher dieser Webseite, ich heiße Gelo und bin euer persönlicher 3D-Assistent. D.h. Sie können mich vergrößern oder auch in unterschiedliche Richtungen drehen. Auf dieser Seite können Sie die Information über Oleg sehen. Seinen Bildungsweg, seine Projekte, seine Referenzen und auch die Schwerpunkte seiner Tätigkeit. Am Ende können Sie mich fragen, ob Oleg für Ihren Job genau der richtige ist. Wollen Sie mich bzw. die komplette Webseite in andere Sprache haben, kein Problem, sagen Sie mir welche.",
+    mainDescription: "Liebe Besucher dieser Webseite, ich heiße Gelo und bin Ihr persönlicher 3D-Assistent. Sie können mich vergrößern oder auch in unterschiedliche Richtungen drehen. Auf dieser Seite können Sie die Information über Oleg sehen: seinen Bildungsweg, seine Projekte, seine Referenzen und auch die Schwerpunkte seiner Tätigkeit. Zum Schluss können Sie mich fragen, ob Oleg für Ihren Job genau der Richtige ist. Wollen Sie mich selbst bzw. die komplette Webseite in eine andere Sprache übersetzen - kein Problem - teilen Sie mir Ihre gewünschte Sprache mit.",
     introduction: "Hallo! Ich bin Adrian, ein Next.js Entwickler aus Kroatien.",
     buttonText: "Zeige meine Arbeit"
   }

@@ -16,6 +16,7 @@ type Project = {
   img: string;
   iconLists: string[];
   link: string;
+  stack: string;
 };
 
 const RecentProjects = () => {
@@ -37,8 +38,8 @@ const RecentProjects = () => {
   return (
     <div className="py-20">
       <h1 className="heading">
-        A small selection of{" "}
-        <span className="text-purple">recent projects</span>
+        {/* A small selection of{" "} */}
+        Meine<span className="text-purple"> Projekte</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
         {projects.slice(0, visibleProjects).map((item: Project) => (
@@ -48,8 +49,8 @@ const RecentProjects = () => {
             onClick={() => openModal(item)}
           >
             <PinContainer
-              title="/ui.aceternity.com"
-              href="#"
+              title="weiterlesen..."
+              // href="#"
             >
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                 <div
@@ -94,12 +95,12 @@ const RecentProjects = () => {
                   ))}
                 </div>
 
-                <div className="flex justify-center items-center">
+                {/* <div className="flex justify-center items-center">
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">
                     Check Live Site
                   </p>
                   <FaLocationArrow className="ms-3" color="#CBACF9" />
-                </div>
+                </div> */}
               </div>
             </PinContainer>
           </div>
@@ -109,8 +110,8 @@ const RecentProjects = () => {
       {visibleProjects < projects.length && (
         <div className="flex justify-center mt-10">
           <MagicButton
-            title="Show more"
-            icon={<FaLocationArrow />}
+            title="Mehr sehen"
+             icon={<FaLocationArrow />}
             position="right"
             handleClick={showMoreProjects}
           />

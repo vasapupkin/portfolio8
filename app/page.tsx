@@ -37,9 +37,10 @@ const Home = () => {
           <Hero key={key} />
           <Grid />
           <RecentProjects />
-          <Clients />
           <Experience />
           <Approach />
+          <Clients />
+
           <Footer />
         </div> 
       </main>

@@ -7,17 +7,15 @@ const Approach = () => {
   return (
     <section className="w-full py-20">
       <h1 className="heading">
-        My <span className="text-purple">approach</span>
+        Das <span className="text-purple">mache ich</span>
       </h1>
       {/* remove bg-white dark:bg-black */}
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         {/* add des prop */}
         <Card
-          title="Planning & Strategy"
-          icon={<AceternityIcon order="Phase 1" />}
-          des="We'll collaborate to map out your website's goals, target audience, 
-          and key functionalities. We'll discuss things like site structure, 
-          navigation, and content requirements."
+          title="Tätigkeit"
+          icon={<AceternityIcon order="Entwicklung" />}
+          des="Ich entwickle gern in C# & JavaScript - dabei nutze ich oft React.js oder Next.js, EntityFramwork. SQL sind die Datenbanken, allerdings setzte ich, wenn erforderlich auch (nosql) mongo DB und cosmos DB ein. Als Architekturmuster benutze ich MVC und MVVC. Als CI/CD - GitHub, vercel sowie Azure Tools. Für die Ressourcenanbindung nutze ich Azure-Cloud. Außerdem habe ich Erfahrung in Umgang mit Docker und Kubernets.  Meine Entwicklungsumgebung ist VS Code oder Visual Studio."
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
@@ -26,11 +24,9 @@ const Approach = () => {
           />
         </Card>
         <Card
-          title="Development & Progress Update"
-          icon={<AceternityIcon order="Phase 2" />}
-          des="Once we agree on the plan, I cue my lofi playlist and dive into
-          coding. From initial sketches to polished code, I keep you updated
-          every step of the way."
+          title="Technologie"
+          icon={<AceternityIcon order="Stack" />}
+          des="Ich benutze ganz unterschiedliche Bibliotheken, Frameworks und Technologien: ethers.js, web3.js, Kryptographische Bibliotheken, JQuery, Ajax, three.js, ChatGpt, websocket, SQL, selenium, puperteer, appium."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -48,11 +44,9 @@ const Approach = () => {
           {/* <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" /> */}
         </Card>
         <Card
-          title="Development & Launch"
-          icon={<AceternityIcon order="Phase 3" />}
-          des="This is where the magic happens! Based on the approved design, 
-          I'll translate everything into functional code, building your website
-          from the ground up."
+          title="Kunden"
+          icon={<AceternityIcon order="Branchen" />}
+          des="Ich arbeite gerne für ganz unterschiedliche Branchen - darunter Banken, Vermögenverwalter, Autovermieter, Softwareentwickler etc. Des Weiteren bin ich sowohl Full-Stack-Entwickler als auch Backend-Entwickler. Dabei implementiere ich SaaS-Lösung, landing Pages, interne Anwendungen, CRUD-Schnittstellen. Darüber hinaus arbeite ich mit Begeisterung an Blockchain/Kryptographie, mathematischen/statistischen Modellen und KI."
         >
           <CanvasRevealEffect
             animationSpeed={3}

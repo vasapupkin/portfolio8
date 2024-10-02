@@ -16,7 +16,7 @@ const Hero = () => {
             words={heroText[language].mainDescription}
             className="text-justify text-[15px] md:text-xl lg:text-2xl"
           />
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
+          {/* <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
             {heroText[language].introduction}
           </p>
 
@@ -26,11 +26,12 @@ const Hero = () => {
               icon={<FaLocationArrow />}
               position="right"
             />
-          </a>
+          </a> */}
         </div>
       </div>
     </div>
   );
 };
+
 
 export default Hero;

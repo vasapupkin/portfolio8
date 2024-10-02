@@ -52,8 +52,8 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+  const leftLists = ["ReactJS", "Javascript", "Typescript", "Git"];
+  const rightLists = ["NextJS", "C#", "MySQL", "Docker"];
 
   const [copied, setCopied] = useState(false);
 
@@ -111,7 +111,7 @@ export const BentoGridItem = ({
             </div>
             <a href="/german-flag.png">
             <MagicButton
-              title="Download CV"
+              title="Mein CV"
               icon={<span>→</span>}
               position="right"
               handleClick={() => {/* Add your click handler */}}
@@ -218,7 +218,7 @@ export const BentoGridItem = ({
                 </div>
 
                 <MagicButton
-                  title={copied ? "Email is Copied!" : "Copy my email address"}
+                  title={copied ? "Email ist kopiert!" : "Meine Email Adresse"}
                   icon={<IoCopyOutline />}
                   position="left"
                   handleClick={handleCopy}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaLocationArrow, FaPaperPlane } from "react-icons/fa6";
-
+import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 
@@ -50,55 +50,61 @@ const Footer: React.FC = () => {
 
       <div className="flex flex-col items-center relative z-10">
         <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
-          presence to the next level?
+          Hier kann <span className="text-purple">AI</span> Ihnen
+          weiterhelfen
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
+          Bitte fügen Sie den Link mit der Profil/Projektbeschreibung Ihres Gesuches und AI analysiert, ob ich für Sie der passende Kandidat bin.
         </p>
         <input
           type="text"
           value={inputValue}
           onChange={handleInputChange}
           className="w-full max-w-md px-4 py-2 mb-4 text-white bg-black-200 border border-black-300 rounded-lg focus:outline-none focus:border-purple relative z-20"
-          placeholder="Enter your message"
+          placeholder="Fügen Sie hier Ihren Link ein"
         />
         <div className="flex flex-col sm:flex-row gap-4">
         <a  onClick={handleSubmit}>
           <MagicButton
-            title="Let's get in touch"
+            title="Prüfen"
             icon={<FaLocationArrow />}
             position="right"
            
    
           />
           </a>
-          <a href="mailto:oleggolo@google.com" className="relative z-20">
+          {/* <a href="mailto:oleggolo@google.com" className="relative z-20">
             <MagicButton
-              title="Send email"
+              title="Übersetzen"
               icon={<FaPaperPlane />}
               position="right"
        
             />
-          </a>
+          </a> */}
         </div>
         {responseMessage && (
-          <p className="text-white-200 mt-4 text-center relative z-20">{responseMessage}</p>
+
+<TextGenerateEffect
+words={responseMessage}
+className="text-justify text-[15px] md:text-xl lg:text-2xl"
+/>
+          // <p className="text-white-200 mt-4 text-center relative z-20">{responseMessage}</p>
         )}
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2024 Adrian Hajdin
+          Copyright © 2024 Oleg Golovin
         </p>
 
         <div className="flex items-center md:gap-3 gap-6">
           {socialMedia.map((info) => (
+            
             <div
               key={info.id}
               className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
-            >
+            ><a href={info.link} target = "_blank">
               <img src={info.img} alt="icons" width={20} height={20} />
+              </a>
             </div>
           ))}
         </div>
